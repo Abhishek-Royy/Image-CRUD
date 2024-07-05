@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poopins",sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #b4aaaa;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+  @media (max-width: 412px) {
+    .main>.box {
+        width: 95%;
+    }
+
+    .abcd{
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+
+    .b-mainpage{
+      width: 95%;
+      text-align: center;
+    }
+}

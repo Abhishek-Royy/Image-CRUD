@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best trending Userdata collection platfrom- India</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://pngimg.com/d/database_PNG5.png">
+  </head>
+  <body>
+    <div
+      class="main w-full h-full bg-zinc-800 flex items-center justify-center"
+    >
+      <div
+        class="box sm:w-[80%] w-[95%] h-[80%] bg-zinc-900 rounded-lg p-10 overflow-y-scroll"
+      >
+        <div class="abcd flex w-full items-center justify-between mb-[20px]">
+          <a
+            href="/"
+            class="b-mainpage px-[20px] py-[10px] text-white rounded-lg bg-zinc-800"
+            >Back to Mainpage</a
+          >
+          <h1 class="text-white text-2xl text-center">All Users List</h1>
+        </div>
+
+        <% if(readUser.length<1){ %>
+        <h1 class="text-red-900 font-bold text-4xl text-center">
+          No users available
+        </h1>
+        <% }else{ %>
+
+        <div
+          class="cards flex flex-wrap gap-[25px] items-center justify-center"
+        >
+          <% readUser.forEach(function(user){ %>
+          <div class="card w-[300px] h-[400px] bg-zinc-800 rounded p-[15px]">
+            <div class="image w-full h-[270px] bg-zinc-900">
+              <img
+                class="w-full h-full object-center object-cover"
+                src="<%= user.image %>"
+                alt=""
+              />
+            </div>
+            <h2 class="text-center leading-tight text-[20px] text-white">
+              <%= user.name %>
+            </h2>
+            <h3 class="text-center leading-tight text-white text-[15px]">
+              <%= user.email %>
+            </h3>
+            <h4 class="text-center leading-tight text-white text-[14px]">
+              <%= user.phone %>
+            </h4>
+
+            <div class="buttons flex items-center mt-[6px] justify-between">
+              <a
+                class="rounded-lg text-center py-[5px] w-[130px] bg-yellow-600 hover:bg-yellow-500 font-bold"
+                href="/edit/<%= user._id %>"
+                >Edit</a
+              >
+              <a
+                class="rounded-lg text-center py-[5px] w-[130px] bg-red-700 hover:bg-red-600 font-bold text-white"
+                href="/delete/<%= user._id %>"
+                >Delete</a
+              >
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <% } %>
+      </div>
+
+      <!-- <footer>
+        Design & Developed by- Abhishek Roy
+      </footer> -->
+    </div>
+  </body>
+</html>

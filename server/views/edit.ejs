@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best trending Userdata collection platfrom- India</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="icon" href="https://pngimg.com/d/database_PNG5.png">
+  </head>
+  <body>
+    <div
+      class="main w-full h-full bg-zinc-800 flex items-center justify-center"
+    >
+      <div class="box sm:w-[50%] w-[95%] h-[80%] bg-zinc-900 rounded-lg p-10">
+        <h1 class="text-white text-2xl text-center">Upadate your Database</h1>
+        <form
+          class="w-full h-[90%] flex flex-wrap items-center justify-center flex-col gap-[20px]"
+          action="/update/<%= updatedUser._id %>"
+          method="post"
+        >
+          <input
+            class="w-full px-5 py-2 text-white bg-transparent border-2 border-zinc-800 rounded-lg"
+            type="text"
+            required
+            value="<%= updatedUser.name %>"
+            placeholder="Enter Your name"
+            name="name"
+          />
+          <input
+            class="w-full px-5 py-2 text-white bg-transparent border-2 border-zinc-800 rounded-lg"
+            type="email"
+            required
+            value="<%= updatedUser.email %>"
+            placeholder="Enter Your email"
+            name="email"
+          />
+          <input
+            class="w-full px-5 py-2 text-white bg-transparent border-2 border-zinc-800 rounded-lg"
+            type="text"
+            required
+            value="<%= updatedUser.phone %>"
+            placeholder="Enter Your phone"
+            name="phone"
+          />
+          <input
+            class="w-full px-5 py-2 text-white bg-transparent border-2 border-zinc-800 rounded-lg"
+            type="text"
+            required
+            value="<%= updatedUser.image %>"
+            placeholder="Enter Your image"
+            name="image"
+          />
+
+          <!-- <input class=" w-full px-5 py-3 rounded-lg bg-blue-900 text-white cursor-pointer" type="submit" value="Create User"> -->
+          <button
+            class="w-full px-4 py-2 rounded-lg bg-yellow-700 text-white hover:bg-yellow-600"
+            type="submit"
+          >
+            Update User
+          </button>
+          <a
+            class="w-full text-center px-4 py-2 rounded-lg bg-green-700 text-white hover:bg-green-600"
+            type="submit"
+            href="/read"
+            >Check all the User</a
+          >
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
